@@ -1,13 +1,13 @@
-JAR_DIR=$(cd $(dirname $0); pwd)/jar/
-SCHEMASPY_FILENAME='schemaspy-6.0.0-beta.3.jar'
-MYSQL_CONNECTOR_FILENAME='mysql-connector-java-5.1.41-bin.jar'
+JAR_DIR=$(cd $(dirname $0); pwd)/jar
+SCHEMASPY_FILEPATH=$JAR_DIR/schemaspy-6.0.0-beta.3.jar
+MYSQL_CONNECTOR_FILEPATH=$JAR_DIR/mysql-connector-java-5.1.41-bin.jar
 
 HTML_OUT_DIR=$CIRCLE_ARTIFACTS/schemaspy
 
 java \
-  -jar $JAR_DIR$SCHEMASPY_FILENAME \
+  -jar $SCHEMASPY_FILEPATH \
   -t mysql \
-  -dp $JAR_DIR$MYSQL_CONNECTOR_FILENAME \
+  -dp $MYSQL_CONNECTOR_FILEPATH \
   -db circle_ruby_test \
   -host ${DATABASE_HOST:-localhost} \
   -u ${DATABASE_USERNAME:-root} \
