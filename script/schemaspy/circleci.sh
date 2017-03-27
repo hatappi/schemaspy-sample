@@ -12,5 +12,5 @@ java \
   -host ${DATABASE_HOST:-localhost} \
   -u ${DATABASE_USERNAME:-root} \
   -p ${DATABASE_PASSWORD:-''} \
-  -o $HTML_OUT_DIR \
+  -o $HTML_OUT_DIR
 
